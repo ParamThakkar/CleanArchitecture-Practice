@@ -14,6 +14,6 @@ namespace CleanArch.Infra.Data.Context
         {
         }
 
-        DbSet<Course> Courses { get; set; }
+        public DbSet<Course> Courses { get; set; }
     }
 }
