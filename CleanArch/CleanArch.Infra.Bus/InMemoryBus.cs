@@ -16,7 +16,8 @@ namespace CleanArch.Infra.Bus
 
         public Task SendCommand<T>(T command) where T : Command
         {
-            return _mediator.Send(command);
+            var res =  _mediator.Send(command);
+            return res;
         }
     }
 }
