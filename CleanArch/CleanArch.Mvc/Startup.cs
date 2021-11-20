@@ -45,8 +45,6 @@ namespace CleanArch.Mvc
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
 
-            services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly);
-
             RegisterServices(services);
         }
 

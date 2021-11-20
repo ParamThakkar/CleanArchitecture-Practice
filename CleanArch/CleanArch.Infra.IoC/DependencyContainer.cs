@@ -13,6 +13,7 @@ using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Reflection;
+using Domain = CleanArch.Domain;
 
 namespace CleanArch.Infra.IoC
 {
@@ -27,8 +28,8 @@ namespace CleanArch.Infra.IoC
             services.AddScoped<ICourseService, CourseService>();
 
             //add request handlers
-            var assembly = AppDomain.CurrentDomain.GetAssemblies();
-            services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
+
+            Domain.DependencyContainer.AddCommandHandlers(services);
 
             // Infra.Data Layer
             services.AddScoped<ICourseRepository, CourseRepository>();
